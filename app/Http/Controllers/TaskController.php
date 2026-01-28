@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     public function index(Request $request) {
-        $filter = $request->query('filter', 'not_completed');
+        $filter = $request->query('filter', 'completed');
         $query = Task::with('category');
 
         if ($filter === 'completed'){
